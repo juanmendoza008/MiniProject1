@@ -1,0 +1,48 @@
+// List of User information 
+const userList = [
+    {
+        name: "NAme1", 
+        lastName: "LastNAme1",
+        phoneNumber: "123456789",
+        email: "carrot96@", 
+        balance: {
+            "AUD": 1000,
+            "EUR": 1000,
+            "GBP": 1000,
+            "CHF": 1000,
+        },
+    },
+    // {
+    //     name: "User2", 
+    //     lastName: "UserlastName2",
+    //     phoneNumber: "123456789",
+    //     email: "almonds52@",
+    //     balance: {
+    //         "AUD": 10,
+    //         "EUR": 10,
+    //         "GBP": 10,
+    //     },
+    // },
+];
+
+function getBalance() {
+    userList.forEach(user => {
+        Object.entries(user.balance).forEach(([currency, amount]) => {
+            generateBalance(currency, amount);
+        });
+    });
+}
+
+function generateBalance(currency, amount) {
+    const template = document
+        .getElementById("balance-template")
+        .content.cloneNode(true);
+
+    template.querySelector(".card-title").innerText = currency;
+    template.querySelector(".card-text").innerText = amount;
+
+    document.querySelector("#balance-list").appendChild(template);
+}
+
+// Call getBalance to populate the balances
+getBalance();
