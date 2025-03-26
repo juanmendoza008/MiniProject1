@@ -25,6 +25,45 @@ const userList = [
     // },
 ];
 
+let testName=document.getElementById("username")
+let testEmail=document.getElementById("userEmail")
+let testpassword=document.getElementById("password")
+
+function getUserInformation(nameFromInput,emailFromInput){
+    let a=false;
+    for (let user of Users){
+        let nameToComapare= user.name;
+        let emailToCompare= user.email;
+        if ((nameFromInput==nameToComapare) && (emailFromInput==emailToCompare)) {
+            return a=true;
+            break;
+        }
+    }
+    return a;
+}
+
+//console.log(getUserInformation(testName,testEmail))
+
+function validateProfile() {
+    let testName=document.getElementById("username")
+    let testEmail=document.getElementById("userEmail")
+    return getUserInformation(testName,testEmail)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Function for Balance Cards 
 function getBalance() {
     userList.forEach(user => {
         Object.entries(user.balance).forEach(([currency, amount]) => {
