@@ -51,18 +51,6 @@ function validateProfile() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // Function for Balance Cards 
 function getBalance() {
     userList.forEach(user => {
@@ -85,3 +73,51 @@ function generateBalance(currency, amount) {
 
 // Call getBalance to populate the balances
 getBalance();
+
+
+// Function to change button text //HomePage
+function changeButtonText(currencyId) {
+    const button = document.getElementById("currencybutton");
+    const currencyButton = document.getElementById(currencyId);
+
+    if (button && currencyButton) {
+        const value = currencyButton.innerHTML;
+
+        if (button.innerHTML) {
+            button.innerHTML = value;
+        } else {
+            button.innerHTML;
+        }
+    }
+}
+
+// Exchange 
+function changeButtonTextTo(currencyId) {
+    const button = document.getElementById("currencybuttonTo");
+    const currencyButton = document.getElementById(currencyId);
+
+    if (button && currencyButton) {
+        const value = currencyButton.innerHTML;
+
+        if (button.innerHTML) {
+            button.innerHTML = value;
+        } else {
+            button.innerHTML;
+        }
+    }
+}
+
+function changeButtonTextFrom(currencyId) {
+    const button = document.getElementById("currencybuttonFrom");
+    const currencyButton = document.getElementById(currencyId);
+
+    if (button && currencyButton) {
+        const value = currencyButton.innerHTML;
+
+        if (button.innerHTML) {
+            button.innerHTML = value;
+        } else {
+            button.innerHTML;
+        }
+    }
+}

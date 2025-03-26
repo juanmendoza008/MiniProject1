@@ -94,15 +94,15 @@
                     </div>
                 
 
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="currencybutton" data-bs-toggle="dropdown" aria-expanded="false">
                         Currency 
                         </button>
                         <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">AUD</a></li>
-                        <li><a class="dropdown-item" href="#">EUR</a></li>
-                        <li><a class="dropdown-item" href="#">GBP</a></li>
-                        <li><a class="dropdown-item" href="#">CHF</a></li>
-                        </ul>
+                        <li><button onclick="changeButtonText('AUDBtn')" type="button" id="AUDBtn">AUD</button>
+                        <li><button onclick="changeButtonText('EURBtn')" type="button" id="EURBtn">EUR</button>
+                        <li><button onclick="changeButtonText('GBPBtn')" type="button" id="GBPBtn">GBP</button>
+                        <li><button onclick="changeButtonText('CHFBtn')" type="button" id="CHFBtn">CHF</button>
+                      </ul>
 
                     <div class="last Transactions">  
                         <div id="transaction-short-list" class="row g-3 p-3"></div>

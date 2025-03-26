@@ -5,12 +5,7 @@ axios
   .then((response) => {
     console.log("response", response);
     const currency = response.data;
-    //response.data.forEach((item) => addItem(item));
-
-    // let value1= currency.array.forEach(element => { 
-    //     if 
-        
-    // });
+    //currency.forEach((current) => lookFor(current));
 
   });
 
@@ -21,33 +16,29 @@ axios
 //   unit : "A$"
 //   value : 130079.166
 
+//let currencyIDTo = document.getElementById("currencybuttonTo").toLowerCase();
+//let currencyIDFrom = document.getElementById("currencybuttonFrom").toLowerCase();
+let currencyIDTo = "AUD"
+let currencyIDFrom = "GBP"
+
+list=[
+  aud = {name:"AUD",value:1.11},
+  eur = {name:"EUR",value:1.86},
+  gbp = {name:"EUR",value:2.1}
+
+]
 
 
+// function lookFor(list) {
+//   if(currencyIDTo && currencyIDFrom) {
+//     list.find((currencyIDTo.toLowerCase() == list[i]) => {
+//       list.value
+//     })
+//     currencyIDTo.toLowerCase() ==
+//     current.value;
 
-
-// IPA to get user information but don't work to the purpose 
-// axios
-//   .get('https://fakestoreapi.com/users/1')
-//   .then(response => {
-//     console.log("responseUSer",response.data);
-//     response.address.forEach((item) => addItem(item));
-//   });
-
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
+//   }
   
-function filterFunction() {
-    const input = document.getElementById("myInput");
-    const filter = input.value.toUpperCase();
-    const div = document.getElementById("myDropdown");
-    const a = div.getElementsByTagName("a");
-    for (let i = 0; i < a.length; i++) {
-      txtValue = a[i].textContent || a[i].innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        a[i].style.display = "";
-      } else {
-        a[i].style.display = "none";
-      }
-    }
-  }
+
+// }
+

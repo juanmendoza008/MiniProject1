@@ -47,16 +47,15 @@
             <h2>Convert</h2>
             <input type="text" placeholder="AUD...">
 
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-                <div id="myDropdown" class="dropdown-content">
-                  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                  <a href="#AUD">AUD</a>
-                  <a href="#EUR">EUR</a>
-                  <a href="#GBP">GBP</a>
-                  <a href="#CHF">CHD</a>
-                </div>
-            </div>  
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="currencybuttonTo" data-bs-toggle="dropdown" aria-expanded="false">
+              Currency 
+              </button>
+              <ul class="dropdown-menu">
+              <li><button onclick="changeButtonTextTo('AUDBtn')" type="button" id="AUDBtn">AUD</button>
+              <li><button onclick="changeButtonTextTo('EURBtn')" type="button" id="EURBtn">EUR</button>
+              <li><button onclick="changeButtonTextTo('GBPBtn')" type="button" id="GBPBtn">GBP</button>
+              <li><button onclick="changeButtonTextTo('CHFBtn')" type="button" id="CHFBtn">CHF</button>
+            </ul>
 
         </div>
 
@@ -68,16 +67,15 @@
           <h2>To</h2>
           <input type="text" placeholder="EUR...">
 
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                    <a href="#AUD">AUD</a>
-                    <a href="#EUR">EUR</a>
-                    <a href="#GBP">GBP</a>
-                    <a href="#CHF">CHD</a>
-                </div>
-            </div>
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="currencybuttonFrom" data-bs-toggle="dropdown" aria-expanded="false">
+            Currency 
+            </button>
+            <ul class="dropdown-menu">
+            <li><button onclick="changeButtonTextFrom('AUDBtn')" type="button" id="AUDBtn">AUD</button>
+            <li><button onclick="changeButtonTextFrom('EURBtn')" type="button" id="EURBtn">EUR</button>
+            <li><button onclick="changeButtonTextFrom('GBPBtn')" type="button" id="GBPBtn">GBP</button>
+            <li><button onclick="changeButtonTextFrom('CHFBtn')" type="button" id="CHFBtn">CHF</button>
+          </ul>
 
         </div>
 
@@ -98,6 +96,7 @@
 
 
     <script src="/data/exchangeCurrencyIPA.js"></script>
+    <script src="/data/Username.js"></script>
     
 </body>
 </html>

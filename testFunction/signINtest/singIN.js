@@ -58,7 +58,8 @@ Users = [
 // let testName="Moriah.Stanton"
 // let testEmail="Rey.Padberg@karina.biz"
 //Not in the list
-let testName=document.getElementById("username")
+let testName=document.querySelector("#username")
+console.log(testName)
 let testEmail=document.getElementById("userEmail")
 let testpassword=document.getElementById("password")
 
