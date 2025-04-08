@@ -17,34 +17,23 @@ rel="stylesheet"/>
 
 <body style="background-color:white;">
 
-<h2>Search/Filter Dropdown</h2>
-<p>Click on the button to open the dropdown menu, and use the input field to search for a specific dropdown link.</p>
-
-<!-- <div class="dropdown">
-  <button onclick="myFunction()" onclick="dropdownchange()" class="dropbtn" id="dropbtn">Dropdown</button>
-  <div id="myDropdown" class="dropdown-content">
-    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-    <a href="#about">About</a>
-    <a href="#base">Base</a>
-    <a href="#blog">Blog</a>
-    <a href="#contact">Contact</a>
-    <a href="#custom">Custom</a>
-    <a href="#support">Support</a>
-    <a href="#tools">Tools</a>
-  </div>
-</div> -->
-<br><br> 
+<h1>Buttons Test </h1>
+ 
 <div> 
+  <h3> Original button</h3>
   <button onclick="buttonchange()" type="button" id="loginBtn">Before click</button>
 </div>
 <br><br> 
 
 <div> 
+  <h3> Change the value off "Original button"</h3>
   <button onclick="buttontochangeOther()" type="button" id="otherBtn">Change Other button</button>
 </div>
 
 <br><br> 
-<button class="btn btn-secondary dropdown-toggle" type="button" id="currencybutton" data-bs-toggle="dropdown" aria-expanded="false">
+<div>
+  <h3> Change own value button, using set parameters </h3>
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="currencybutton" data-bs-toggle="dropdown" aria-expanded="false">
   Currency 
   </button>
   <ul class="dropdown-menu">
@@ -53,6 +42,8 @@ rel="stylesheet"/>
   <li><button onclick="changeButtonText('GBPBtn')" type="button" id="GBPBtn">GBP</button>
   <li><button onclick="changeButtonText('CHFBtn')" type="button" id="CHFBtn">CHF</button>
 </ul>
+</div>
+
 
 
 

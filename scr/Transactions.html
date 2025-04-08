@@ -21,7 +21,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MT Bank - Transactions</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="styles.css">
 
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -32,9 +32,14 @@
 
 </head>
 <body>
-    <h1>MT Bank</h1>
 
     <div class="container">
+
+      <header>
+        <div class="header">
+            <h1>MT Bank</h1>
+        </div>
+      </header>
 
       <nav class="navbar" style="background-color: black;">
         <!-- Navbar content -->
@@ -72,15 +77,16 @@
 
           <br>
 
-          <div class="search bar">
-              <input type="text" placeholder="Search..">
-          </div>
+          <!-- Filter transactions -->
+        <div class="search-bar">
+          <label for="search">Search Transactions </label>
+          <input type="search" id="search" onkeyup="filterByNameDescription()" data-search>
+        </div>
 
-          <br>
-
-          <div class="list Transactions">  
+        <!-- Last 20 transactions -->
+        <div class="list Transactions">  
             <div id="transaction-list" class="row g-3 p-3"></div>
-          </div>
+        </div>
 
 
       </div>
@@ -91,11 +97,8 @@
 
 
 
-
-
-
     <script src="/data/IPA_access.js"></script>
-    <script src="/data/Username.js"></script>
+    <!-- <script src="/data/Username.js"></script> -->
     
 </body>
 </html>

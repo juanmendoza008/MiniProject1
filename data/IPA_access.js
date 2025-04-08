@@ -1,16 +1,4 @@
 // ----------------- IPA to get bank transactions ------------------ 
-axios
-    .get("https://api.sampleapis.com/fakebank/accounts")
-    .then((response) => {
-        console.log("response", response);
-        const allItems = response.data.reverse();
-        // Number of items in HomePage LAst3 transactions
-        const lastTransactions = allItems.slice(0, 3);
-        lastTransactions.forEach((item) => addItemLastTransactions(item));
-        // Number of items in Transactions List. 20 transactions
-        const transactions = allItems.slice(0, 20);
-        transactions.forEach((item) => addItemListTransactions(item));
-});
 
 // -------- Transactions Data information ---------
 //   category : "Other Services"
@@ -19,6 +7,27 @@ axios
 //   description  : "All Purpose Spray"
 //   id : 1
 //   transactionDate : "2015-12-31"
+
+
+
+let transactions = [];
+
+axios
+    .get("https://api.sampleapis.com/fakebank/accounts")
+    .then((response) => {
+        console.log("response", response);
+        allItems = response.data.reverse();
+        // Number of items in HomePage LAst8 transactions
+        lastTransactions = allItems.slice(20, 28);
+        //console.log("lastTransactions",lastTransactions)
+        lastTransactions.forEach((item) => addItemLastTransactions(item));
+        // Number of items in Transactions List. 20 transactions
+        transactions = allItems.slice(20, 40);
+        //console.log("Transactions",transactions)
+        transactions.forEach((item) => addItemListTransactions(item));
+});
+
+
 
 // Function in Homepage Last transactions
 function addItemLastTransactions(item) {
@@ -36,6 +45,45 @@ function addItemLastTransactions(item) {
     }
 }
 
+function filterByCurrency(currencyId) {
+    // Variables 
+    const button = document.getElementById("currencybutton");
+    const currencyButton = document.getElementById(currencyId);
+    if (!currencyButton) {
+        console.error(`Element with id "${currencyId}" not found.`);
+        return;
+    }
+    const value = currencyButton.innerHTML;
+
+    let number1 , number2;
+
+    switch (value) {
+        case "AUD":
+            number1 =+ 0;
+            break;
+        case "EUR":
+            number1 =+ 2;
+            break;
+        case "GBP":
+            number1 =+ 4;
+            break;
+        case "CHF":
+            number1 =+ 6;
+            break;
+    }
+    number2=number1+2;
+    console.log("number1: ",number1,"; number2: ",number2)
+
+    findArray=lastTransactions.slice(number1,number2)
+
+    // Reset the templates
+    document.querySelector("#transaction-short-list").innerHTML = "";
+    // Show filter templates
+    findArray.forEach(item => addItemLastTransactions(item));
+}
+
+
+
 // Function in Transactions List transactions
 function addItemListTransactions(item) {
     try {
@@ -52,5 +100,19 @@ function addItemListTransactions(item) {
     }
 }
 
+function filterByNameDescription() {
+    // Variables 
+    let input, filter;
+    input = document.getElementById("search");
+    filter = input.value.toLowerCase();
 
-//Filter transactions by Name or category
+    let findArray = transactions.filter((item) =>
+        item.category.toLowerCase().includes(filter) ||
+        item.description.toLowerCase().includes(filter)
+    );
+    //console.log("Find Object",findArray)
+    // Reset the templates
+    document.querySelector("#transaction-list").innerHTML = "";
+    // Show filter templates
+    findArray.forEach(item => addItemListTransactions(item));
+}
